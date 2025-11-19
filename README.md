@@ -1,197 +1,218 @@
-# 🎭 Playwright Automation Framework
+# 🎭 Playwright E-Commerce Automation Framework
 
-A robust and scalable test automation framework built with Playwright and JavaScript, following the Page Object Model (POM) design pattern.
+> A modern, scalable test automation framework built with Playwright and JavaScript using the Page Object Model (POM) design pattern.
 
-## 🌐 Application Under Test
+[![Playwright Tests](https://github.com/yourusername/playwright-ecommerce/actions/workflows/playwright.yml/badge.svg)](https://github.com/yourusername/playwright-ecommerce/actions/workflows/playwright.yml)
+[![Playwright](https://img.shields.io/badge/Playwright-1.56.1-45ba4b?logo=playwright)](https://playwright.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js)](https://nodejs.org/)
 
-**Website:** [AutomationExercise.com](https://automationexercise.com/)
+---
 
-## 📋 Table of Contents
+## 🌟 Features
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Running Tests](#-running-tests)
-- [Test Reports](#-test-reports)
-- [Writing Tests](#-writing-tests)
-- [CI/CD Integration](#-cicd-integration)
-- [Best Practices](#-best-practices)
-
-## ✨ Features
-
-- ✅ **Page Object Model (POM)** - Clean separation of test logic and page elements
-- ✅ **Reusable Components** - Common control functions for all interactions
+- ✅ **Page Object Model** - Clean separation of test logic and page interactions
+- ✅ **Reusable Components** - Control functions for consistent element interactions
 - ✅ **Multi-Browser Support** - Chrome, Firefox, Safari
-- ✅ **Parallel Execution** - Fast test execution with configurable workers
-- ✅ **Allure Reporting** - Beautiful and detailed test reports
-- ✅ **Environment Management** - Easy switching between environments
-- ✅ **CI/CD Ready** - Optimized for GitHub Actions, Jenkins, etc.
-- ✅ **Auto-waiting** - Built-in smart waits, no explicit waits needed
-- ✅ **Screenshot & Video** - Automatic capture on test failures
+- ✅ **Parallel Execution** - Fast test runs with configurable workers
+- ✅ **Allure Reports** - Beautiful, detailed test reports
+- ✅ **CI/CD Ready** - GitHub Actions integration included
+- ✅ **Data-Driven Testing** - JSON fixtures for static data
+- ✅ **Helper Functions** - Dynamic data generation utilities
 
-## 🛠️ Tech Stack
+---
 
-- **Test Framework:** Playwright v1.56+
-- **Language:** JavaScript (Node.js)
-- **Design Pattern:** Page Object Model (POM)
-- **Reporting:** Allure, HTML
-- **CI/CD:** GitHub Actions compatible
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/playwright-ecommerce.git
+cd playwright-ecommerce
+
+# Install dependencies
+npm install
+
+# Install Playwright browsers
+npx playwright install
+```
+
+### Run Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run with UI (interactive mode)
+npm run test:ui
+
+# Run in headed mode (see browser)
+npm run test:headed
+
+# Run in debug mode
+npm run test:debug
+
+# Run smoke tests only
+npm run test:smoke
+
+# Run regression tests
+npm run test:regression
+
+# View Playwright HTML report
+npm run report
+
+# Quick Allure report (starts server immediately)
+npm run allure:serve
+
+# Generate Allure report
+npm run allure:generate
+
+# Generate single-file Allure report (for sharing)
+npm run allure:generate:single
+
+# Open Allure report in browser
+npm run allure:open
+```
+
+---
 
 ## 📁 Project Structure
 
 ```
-Playwright-project/
-├── .env                          # Environment variables
-├── package.json                  # Dependencies and scripts
-├── playwright.config.js          # Playwright configuration
-├── pages/                        # Page Object Models
-│   ├── BasePage.js              # Base class with common methods
-│   ├── LoginPage.js             # Login/Signup page
-│   ├── RegistrationPage.js      # Registration form page
-│   ├── ProductPage.js           # Product listing & details
-│   └── CartPage.js              # Shopping cart page
-├── utils/                        # Utility functions
-│   └── controlFunctions.js      # Reusable control methods
-├── tests/                        # Test specifications
-│   ├── auth/                    # Authentication tests
+Playwright-Ecommerce/
+├── fixtures/
+│   └── testData.json          # Static test data (addresses, DOB, etc.)
+├── pages/                      # Page Object Models
+│   ├── BasePage.js            # Base class with common methods
+│   ├── LoginPage.js           # Login & Signup page
+│   ├── RegistrationPage.js    # Registration form page
+│   ├── ProductPage.js         # Product listing & details
+│   └── CartPage.js            # Shopping cart page
+├── utils/
+│   ├── controlFunctions.js    # Reusable element interactions
+│   └── helperFunctions.js     # Dynamic data generators
+├── tests/
+│   ├── auth/                  # Authentication tests
 │   │   ├── login.spec.js
 │   │   └── registration.spec.js
-│   └── ecommerce/               # E-commerce tests
-│       └── cart.spec.js
-├── allure-results/              # Allure test results
-├── allure-report/               # Generated Allure reports
-└── playwright-report/           # HTML test reports
+│   ├── ecommerce/             # E-commerce tests
+│   │   └── cart.spec.js
+│   └── e2e/                   # End-to-end flows
+│       └── user-journey.spec.js
+├── .github/
+│   └── workflows/
+│       └── playwright.yml     # CI/CD configuration
+├── playwright.config.js       # Playwright configuration
+└── package.json              # Dependencies & scripts
 ```
 
-## 📦 Prerequisites
+---
 
-- **Node.js** - v18 or higher
-- **npm** - v9 or higher
-- **Git** - For version control
+## 🧪 Test Scenarios
 
-## 🚀 Installation
+### Authentication (`tests/auth/`)
+- ✅ User registration with multiple data sets
+- ✅ Login with valid/invalid credentials
+- ✅ Logout functionality
+- ✅ Email validation
 
-1. **Clone the repository:**
+### E-Commerce (`tests/ecommerce/`)
+- ✅ Add products to cart
+- ✅ Update cart quantities
+- ✅ Remove items from cart
+- ✅ Checkout flow
+
+### End-to-End (`tests/e2e/`)
+- ✅ Complete user journey: Register → Login → Shop → Checkout
+
+---
+
+## 📊 Test Reports
+
+### HTML Report (Built-in)
+
 ```bash
-git clone <repository-url>
-cd Playwright-project
+# View last test report (opens automatically in browser)
+npm run report
 ```
 
-2. **Install dependencies:**
+### Allure Report
+
 ```bash
-npm install
+# Option 1: Serve report directly (fastest - starts server immediately)
+npm run allure:serve
+# Opens: http://localhost:port with live report
+
+# Option 2: Generate and open report
+npm run allure:generate          # Generate report
+npm run allure:open              # Open in browser
+
+# Option 3: Generate single-file report (for sharing)
+npm run allure:generate:single   # Creates standalone HTML file
+npm run allure:open              # Open in browser
 ```
 
-3. **Install Playwright browsers:**
-```bash
-npx playwright install
-```
+**Report Locations:**
+- **HTML Report**: `playwright-report/index.html`
+- **Allure Report**: `allure-report/index.html`
+- **Allure Results**: `allure-results/` (raw test data)
 
-4. **Setup environment variables:**
-```bash
-# Create .env file in root directory
-cp .env.example .env
-```
+**Allure Commands Explained:**
 
-## ⚙️ Configuration
+| Command | What It Does | When to Use |
+|---------|--------------|-------------|
+| `allure:serve` | Starts local server with live report | Quick check after test run |
+| `allure:generate` | Creates static HTML report | For archiving/CI |
+| `allure:generate:single` | Creates single standalone file | For sharing via email/Slack |
+| `allure:open` | Opens existing report in browser | View previously generated report |
 
-### Environment Variables (.env)
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
 
 ```env
 ENV=staging
 BASE_URL=https://automationexercise.com
 ```
 
-### Playwright Config (playwright.config.js)
+### Playwright Config
 
-- **Timeout:** 30 seconds per test
-- **Retries:** 0 locally, 2 in CI/CD
-- **Workers:** 3 locally, 2 in CI/CD
-- **Browsers:** Chromium, Firefox, WebKit
+Key settings in `playwright.config.js`:
 
-## 🧪 Running Tests
-
-### Run all tests
-```bash
-npm test
+```javascript
+{
+  timeout: 40000,              // Test timeout
+  retries: 2,                  // Retry failed tests (CI only)
+  workers: undefined,          // Parallel workers (50% of CPU cores)
+  use: {
+    baseURL: process.env.BASE_URL,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: 'retain-on-failure'
+  }
+}
 ```
 
-### Run tests in headed mode (see browser)
-```bash
-npm run test:headed
-```
+---
 
-### Run tests in UI mode (interactive)
-```bash
-npm run test:ui
-```
+## 🎯 Writing Tests
 
-### Run tests in debug mode
-```bash
-npm run test:debug
-```
-
-### Run specific browser
-```bash
-npm run test:chrome
-npx playwright test --project=firefox
-npx playwright test --project=webkit
-```
-
-### Run tests by tags
-```bash
-# Smoke tests only
-npm run test:smoke
-
-# Regression tests only
-npm run test:regression
-```
-
-### Run specific test file
-```bash
-npx playwright test tests/auth/login.spec.js
-```
-
-### Run with custom workers
-```bash
-# Sequential execution
-npx playwright test --workers=1
-
-# Parallel with 4 workers
-npx playwright test --workers=4
-```
-
-## 📊 Test Reports
-
-### HTML Report (Built-in)
-```bash
-# View last test report
-npm run report
-```
-
-### Allure Report
-```bash
-# Generate Allure report
-npm run allure:generate
-
-# Open Allure report
-npm run allure:open
-```
-
-Reports are automatically generated after each test run:
-- **HTML Report:** `playwright-report/index.html`
-- **Allure Report:** `allure-report/index.html`
-
-## ✍️ Writing Tests
-
-### Test Structure Example
+### Basic Test Structure
 
 ```javascript
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/LoginPage');
+const { HelperFunctions } = require('../../utils/helperFunctions');
+const testData = require('../../fixtures/testData.json');
 
 test.describe('Login Tests', () => {
   let loginPage;
@@ -202,7 +223,16 @@ test.describe('Login Tests', () => {
   });
 
   test('should login successfully @smoke', async () => {
-    await loginPage.login('test@example.com', 'Password123');
+    // Dynamic data
+    const email = HelperFunctions.generateEmail('test');
+    
+    // Static data
+    const accountData = testData.accountData.default;
+    
+    // Test actions
+    await loginPage.login(email, 'Password123');
+    
+    // Assertions
     await expect(loginPage.loggedInUser).toBeVisible();
   });
 });
@@ -211,8 +241,6 @@ test.describe('Login Tests', () => {
 ### Page Object Example
 
 ```javascript
-const { BasePage } = require('./BasePage');
-
 class LoginPage extends BasePage {
   constructor(page) {
     super(page);
@@ -226,124 +254,172 @@ class LoginPage extends BasePage {
     await this.controls.clickElement(this.loginButton);
   }
 }
-
-module.exports = { LoginPage };
 ```
+
+---
 
 ## 🔄 CI/CD Integration
 
-### GitHub Actions Example
+### GitHub Actions
 
-```yaml
-name: Playwright Tests
+The framework includes a pre-configured GitHub Actions workflow (`.github/workflows/playwright.yml`):
 
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+**Features:**
+- ✅ Runs on push to main/master branches
+- ✅ Runs on pull requests
+- ✅ Installs dependencies and browsers
+- ✅ Executes all tests
+- ✅ Generates both HTML and Allure reports
+- ✅ Uploads reports as artifacts
+- ✅ Deploys Allure report to GitHub Pages (optional)
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      
-      - name: Run tests
-        run: npm test
-      
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: playwright-report
-          path: playwright-report/
+### Accessing Reports in CI
+
+After a GitHub Actions run completes:
+
+1. **Go to your GitHub repository**
+2. **Click "Actions" tab**
+3. **Select the workflow run**
+4. **Scroll down to "Artifacts" section**
+
+**Available Artifacts:**
+- 📊 `playwright-html-report` - Playwright HTML report
+- 📈 `allure-report` - Allure HTML report
+- 🔍 `allure-results` - Raw Allure test data
+- ❌ `test-results` - Failure screenshots/videos (only on failure)
+
+**GitHub Pages (Optional):**
+If enabled, Allure reports are automatically published to:
+```
+https://yourusername.github.io/playwright-ecommerce/allure-report/
 ```
 
-## 📝 Best Practices
+**To enable GitHub Pages:**
+1. Go to Settings → Pages
+2. Source: Deploy from a branch
+3. Branch: `gh-pages` / `root`
+4. Save
 
-### 1. **Page Objects**
-- Keep page objects clean with only actions
-- Use descriptive method names
-- Avoid assertions in page objects
+### Running in CI
 
-### 2. **Tests**
-- Follow AAA pattern (Arrange, Act, Assert)
-- Use meaningful test names
-- One assertion per test when possible
-- Use tags (@smoke, @regression) for organization
+Tests automatically run on:
+- Push to `main` or `master` branch
+- Pull request creation/update
 
-### 3. **Locators**
-- Prefer `data-qa` attributes
-- Use `page.locator()` over deprecated methods
-- Avoid XPath when possible
+**Manual Trigger:**
+Go to Actions → Playwright Tests → Run workflow
 
-### 4. **Waits**
-- Rely on Playwright's auto-waiting
-- Avoid `wait()` or `sleep()` methods
-- Use `waitForLoadState()` when needed
+---
 
-### 5. **Data Management**
-- Use timestamps for unique data
-- Keep test data inline for clarity
-- No hardcoded credentials
+## 📚 Key Concepts
 
-## 🏗️ Design Patterns
+### Data Management
 
-### Page Object Model (POM)
-- **BasePage:** Common functionality inherited by all pages
-- **Page Classes:** Encapsulate page elements and actions
-- **Control Functions:** Reusable interaction methods
+**Dynamic Data** (always unique):
+```javascript
+const email = HelperFunctions.generateEmail('test');
+const username = HelperFunctions.generateUsername('user');
+```
 
-### Benefits:
-- ✅ Maintainability - Update locators in one place
-- ✅ Readability - Tests read like user stories
-- ✅ Reusability - Share common actions
-- ✅ Scalability - Easy to add new pages/tests
+**Static Data** (reusable):
+```javascript
+const accountData = testData.accountData.default;
+const addressData = testData.addressData.usa;
+```
 
-## 🐛 Troubleshooting
+### Test Tags
 
-### Tests failing randomly?
-- Increase timeout in `playwright.config.js`
-- Reduce number of workers
-- Check for race conditions
+Organize tests with tags:
+```javascript
+test('should login @smoke', async () => { ... });
+test('should validate form @regression', async () => { ... });
+```
 
-### Browser not launching?
+Run by tag:
+```bash
+npm run test:smoke       # Run smoke tests
+npm run test:regression  # Run regression tests
+```
+
+---
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**Tests fail with "Cannot find module"**
+```bash
+npm install
+```
+
+**Browsers not launching**
 ```bash
 npx playwright install --with-deps
 ```
 
-### .env not loading?
-- Ensure `.env` is in root directory
-- No spaces around `=` in .env file
-- Restart terminal after changes
+**Timeout errors**
+- Increase timeout in `playwright.config.js`
+- Check network connectivity
+- Reduce parallel workers
 
-## 📚 Resources
+**Strict mode violations**
+- Make locators more specific
+- Use `.first()` or `.nth(index)`
+- Add proper waits
 
-- [Playwright Documentation](https://playwright.dev/)
-- [Playwright Best Practices](https://playwright.dev/docs/best-practices)
-- [Page Object Model](https://playwright.dev/docs/pom)
-- [AutomationExercise API](https://automationexercise.com/api_list)
+---
+
+## 📈 Best Practices
+
+1. **Keep Tests Independent** - Each test should run standalone
+2. **Use Page Objects** - Separate test logic from page interactions
+3. **Avoid Hard Waits** - Use auto-waiting and proper locators
+4. **Tag Your Tests** - Organize with `@smoke`, `@regression` tags
+5. **Generate Unique Data** - Use helper functions for emails/usernames
+6. **Clean Up After Tests** - Delete created test data
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the ISC License.
+
+---
 
 ## 👤 Author
 
 **Amina**
 
-## 📄 License
+---
 
-ISC
+## 🙏 Acknowledgments
+
+- [Playwright Documentation](https://playwright.dev/)
+- [AutomationExercise](https://automationexercise.com/) - Test Application
+- [Allure Framework](https://docs.qameta.io/allure/) - Reporting
 
 ---
 
-**Happy Testing! 🎭**
+## 📞 Support
+
+For issues and questions:
+- 📧 Email: your.email@example.com
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/playwright-ecommerce/issues)
+- 📖 Docs: [Project Wiki](https://github.com/yourusername/playwright-ecommerce/wiki)
+
+---
+
+<div align="center">
+  <p>Built with ❤️ using Playwright</p>
+  <p>⭐ Star this repo if you find it helpful!</p>
+</div>
