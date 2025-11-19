@@ -34,8 +34,7 @@ jobs:
       if: always()
       run: |
         npm install -g allure-commandline
-        npx allure serve allure-results
-        npx allure generate --single-file allure-results --clean
+        npx allure generate allure-results --clean --single-file
     
     - name: Upload Playwright HTML Report
       uses: actions/upload-artifact@v4
