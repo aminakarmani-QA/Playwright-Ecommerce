@@ -64,7 +64,7 @@ class CartPage extends BasePage {
   
   async removeItem(index) {
     await this.controls.clickElement(this.deleteButtons.nth(index));
-    await this.waitForNetworkIdle();
+    await this.waitForPageLoad('networkidle');
   }
 
   async removeAllItems() {

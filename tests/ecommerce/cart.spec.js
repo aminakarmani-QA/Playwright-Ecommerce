@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { CartPage } = require('../../pages/CartPage');
-const { ProductPage } = require('../../pages/ProductPage').default;
+const { ProductPage } = require('../../pages/ProductPage');
 const { LoginPage } = require('../../pages/LoginPage');
 const { RegistrationPage } = require('../../pages/RegistrationPage');
 const { HelperFunctions } = require('../../utils/helperFunctions');
