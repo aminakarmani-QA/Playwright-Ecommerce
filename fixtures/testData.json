@@ -1,0 +1,85 @@
+{
+  "accountData": {
+    "default": {
+      "password": "Test@123",
+      "day": "15",
+      "month": "6",
+      "year": "1990"
+    },
+    "alternate": {
+      "password": "Pass@123",
+      "day": "10",
+      "month": "5",
+      "year": "1995"
+    },
+    "minimal": {
+      "password": "Min@123",
+      "day": "1",
+      "month": "1",
+      "year": "2000"
+    }
+  },
+
+  "addressData": {
+    "usa": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "company": "Test Company",
+      "address1": "123 Main Street",
+      "address2": "Suite 100",
+      "country": "United States",
+      "state": "California",
+      "city": "Los Angeles",
+      "zipcode": "90001",
+      "mobileNumber": "+11234567890"
+    },
+    "india": {
+      "firstName": "Raj",
+      "lastName": "Kumar",
+      "company": "Tech Corp",
+      "address1": "456 Tech Park",
+      "address2": "Building A",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "zipcode": "400001",
+      "mobileNumber": "+919876543210"
+    },
+    "australia": {
+      "firstName": "Emma",
+      "lastName": "Smith",
+      "company": "Aus Company",
+      "address1": "789 Sydney Road",
+      "address2": "Floor 5",
+      "country": "Australia",
+      "state": "NSW",
+      "city": "Sydney",
+      "zipcode": "2000",
+      "mobileNumber": "+61212345678"
+    },
+    "canada": {
+      "firstName": "Sarah",
+      "lastName": "Johnson",
+      "company": "Maple Corp",
+      "address1": "101 Maple Avenue",
+      "address2": "Unit 12",
+      "country": "Canada",
+      "state": "Ontario",
+      "city": "Toronto",
+      "zipcode": "M5V 3A8",
+      "mobileNumber": "+14165551234"
+    },
+    "minimal": {
+      "firstName": "Min",
+      "lastName": "User",
+      "company": "",
+      "address1": "123 St",
+      "address2": "",
+      "country": "India",
+      "state": "State",
+      "city": "City",
+      "zipcode": "12345",
+      "mobileNumber": "1234567890"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# Playwright
+node_modules/
+test-results/
+playwright-report/
+.env
+
+# Allure
+allure-results/
+allure-report/
+
+# macOS junk files
+.DS_Store
