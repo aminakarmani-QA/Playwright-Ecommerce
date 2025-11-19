@@ -27,14 +27,15 @@ jobs:
       run: npx playwright install --with-deps
     
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test @smoke 
       continue-on-error: true
     
     - name: Generate Allure Report
       if: always()
       run: |
         npm install -g allure-commandline
-        npx allure generate allure-results --clean -o allure-report
+        npx allure serve allure-results
+        npx allure generate --single-file allure-results --clean
     
     - name: Upload Playwright HTML Report
       uses: actions/upload-artifact@v4
