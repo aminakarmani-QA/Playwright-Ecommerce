@@ -27,7 +27,7 @@ jobs:
       run: npx playwright install --with-deps
     
     - name: Run Playwright tests
-      run: npx playwright test @smoke 
+      run: npx playwright test --grep "@smoke"
       continue-on-error: true
     
     - name: Generate Allure Report
