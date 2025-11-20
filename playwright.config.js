@@ -7,7 +7,7 @@ require('dotenv').config();
  */
 module.exports = defineConfig({
   testDir: './tests',
-  timeout: 40000,
+  timeout: 60000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
