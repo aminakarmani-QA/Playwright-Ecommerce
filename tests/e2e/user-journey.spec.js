@@ -6,7 +6,7 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/LoginPage');
 const { RegistrationPage } = require('../../pages/RegistrationPage');
-const {ProductPage} = require('../../Pages/ProductPage');
+const {ProductPage} = require('../../pages/ProductPage');
 const { CartPage } = require('../../pages/CartPage');
 const { HelperFunctions } = require('../../utils/helperFunctions');
 const testData = require('../../fixtures/testData.json');
