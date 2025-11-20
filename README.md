@@ -2,7 +2,7 @@
 
 > A modern, scalable test automation framework built with Playwright and JavaScript using the Page Object Model (POM) design pattern.
 
-[![Playwright Tests](https://github.com/aminakarmani-QA/playwright-ecommerce/actions/workflows/playwright.yml/badge.svg)](https://github.com/yourusername/playwright-ecommerce/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/aminakarmani-QA/playwright-ecommerce/actions/workflows/playwright.yml/badge.svg)](https://github.com/aminakarmani-QA/playwright-ecommerce/actions/workflows/playwright.yml)
 [![Playwright](https://img.shields.io/badge/Playwright-1.56.1-45ba4b?logo=playwright)](https://playwright.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js)](https://nodejs.org/)
 
